@@ -1,0 +1,12 @@
+import express from 'express';
+import { reportDeptBooks, reportIssues, reportReturns, reportOverdue, reportFines, reportDeptStudents } from '../controllers/reportController.js';
+import { protect, authorize } from '../middleware/authMiddleware.js';
+const router = express.Router();
+router.use(protect, authorize('admin', 'librarian'));
+router.get('/department-books', reportDeptBooks);
+router.get('/department-students', reportDeptStudents);
+router.get('/issues', reportIssues);
+router.get('/returns', reportReturns);
+router.get('/overdue', reportOverdue);
+router.get('/fines', reportFines);
+export default router;

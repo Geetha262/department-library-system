@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased font-sans;
+  }
+}
+
+/* Custom scrollbars for clean modern tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@page {
+  margin: 15mm;
+}
+
+@media print {
+  html,
+  body,
+  #root {
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  #root > div {
+    display: block !important;
+    min-height: 0 !important;
+    height: auto !important;
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  #root > div > aside,
+  #root > div > div > header {
+    display: none !important;
+  }
+
+  #root > div > div {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  #root > div > div > main {
+    width: 100% !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  .report-content,
+  .report-content * {
+    visibility: visible !important;
+    color: #111 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .report-content {
+    position: static !important;
+    width: 100% !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    color: #111 !important;
+  }
+
+  .reports-page {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .print-only {
+    display: block !important;
+    padding-bottom: 8mm !important;
+    color: #111 !important;
+  }
+
+  .report-content .overflow-x-auto {
+    overflow: visible !important;
+  }
+
+  .report-content table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    color: #111 !important;
+    font-size: 9pt !important;
+  }
+
+  .report-content thead {
+    display: table-header-group !important;
+  }
+
+  .report-content tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .report-content th,
+  .report-content td {
+    padding: 4px 6px !important;
+    border: 1px solid #666 !important;
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  .report-content th {
+    font-weight: 700 !important;
+  }
+}

@@ -1,0 +1,7 @@
+import api from './api';
+
+export const dashboardService = {
+  getStats: () => api.get('/dashboard/stats'),
+};
+
+export default dashboardService;
